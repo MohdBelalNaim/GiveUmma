@@ -25,11 +25,11 @@ return (
     </section>
 
     <section className='container mx-auto'>
-        <section className='py-8 px-[72px]'>
+        <section className='py-8 px-[72px] max-sm:px-[12px]'>
             <div className={`${styles.fundraisingTitle} text-sm md:text-[32px] mb-3 font-[700]`}>Fundraising now</div>
             <div className={`${styles.fundraisingSubTitle} mb-4`}>Sponsored</div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-6">
                 {
                 data.map((item,index)=>
                 <CampaignCard index={index} />)
@@ -42,10 +42,10 @@ return (
             </div>
         </section>
 
-        <section className="py-8 px-[72px]">
+        <section className="py-8 px-[72px] max-sm:px-[12px]">
             <div className={`${styles.fundraisingTitle} text-sm md:text-[32px] mb-3 font-[700]`}>Organizations</div>
             <div className={`${styles.fundraisingSubTitle} mb-4`}>Support your favorite organizations</div>
-            <div className="grid grid-cols-3 gap-6 mt-4">
+            <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-6 mt-4">
                 {
                 orgData.map((items,index)=>
                 <OrganizationsCard index={index} />)
