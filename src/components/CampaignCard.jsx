@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CampaignCard = ({index}) => {
 return (
+<Link to="/details">
 <div
     className='bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-transform'>
     <img src={`http://picsum.photos/450/500?${index}`} className="h-[260px] object-cover w-full" />
@@ -42,6 +44,7 @@ return (
         </div>
     </div>
 </div>
+</Link>
 )
 }
 

@@ -1,8 +1,11 @@
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import HomeNavbar from "../components/HomeNavbar";
 
 const DetailsPage = () => {
   return (
+   <>
+   <HomeNavbar/>
     <section className="flex gap-8 max-w-5xl mx-auto p-2 items-start">
       {/* main */}
       <main className="space-y-4">
@@ -43,6 +46,7 @@ const DetailsPage = () => {
         </div>
       </aside>
     </section>
+   </>
   );
 };
 
