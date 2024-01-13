@@ -110,8 +110,7 @@ return (
         <input type="text"
           className=' mt-2 w-full text-sm bg-gray-100 p-4 rounded-lg border border-gray-300 shadow-inner'
           placeholder='I want to support...' />
-          <div className='text-xs text-gray-500 mt-4'>DISCOVER</div>
-        <div className='flex items-center gap-4 py-2 mt-1'>
+        <div className='flex items-center gap-4 py-2 mt-2'>
           <i className="bi bi-globe text text-gray-400"></i>
           <div className='text-sm'>Insipiring Campaigns</div>
         </div>
@@ -125,22 +124,23 @@ return (
         </div>
       </div>
       <div className='px-3 py-2 border-t'>
-        <div className='text-xs text-gray-500 mt-2'>START</div>
-        <div className='flex items-center gap-4 py-2 mt-3'>
+        <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-send text text-gray-400"></i>
           <div className='text-sm'>Start fundraising</div>
         </div>
       </div>
       <div className='px-3 py-2 border-t'>
-        <div className='text-xs text-gray-500 mt-2'>CONTACT</div>
-        <div className='flex items-center gap-4 py-2 mt-3'>
+        <div className='flex items-center gap-4 py-2'>
+          <i className="bi bi-person text text-gray-400"></i>
+          <div className='text-sm'>About Us</div>
+        </div>
+        <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-phone text text-gray-400"></i>
           <div className='text-sm'>Contact Us</div>
         </div>
       </div>
       <div className='px-3 py-2 border-t'>
-        <div className='text-xs text-gray-500 mt-2'>ACCOUNT</div>
-        <div className='flex items-center gap-4 py-2 mt-3'>
+        <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-shield text text-gray-400"></i>
           <div className='text-sm cursor-pointer' onClick={showAuth}>Login or Signup</div>
         </div>
