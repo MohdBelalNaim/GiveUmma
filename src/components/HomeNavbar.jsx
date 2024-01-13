@@ -31,7 +31,7 @@ return (
   {
   auth?
   <div className={`${styles.searchOverlay} flex justify-center items-start`}>
-    <div className='bg-white w-[36%] rounded-xl p-4 shadow-xl relative top-5 animate__animated animate__bounceIn'>
+    <div className='bg-white w-[36%] max-sm:w-[96%] rounded-xl p-4 shadow-xl relative top-5 animate__animated animate__bounceIn'>
       <div><i onClick={hideAuth} className="bi bi-x text-xl font-bold"></i></div>
       <div className='grid grid-cols-2'>
         <div className='font-bold border-b-2 text-center py-3 cursor-pointer' onClick={()=>setSignup(false)}>Login</div>
@@ -110,17 +110,32 @@ return (
         <input type="text"
           className=' mt-2 w-full text-sm bg-gray-100 p-4 rounded-lg border border-gray-300 shadow-inner'
           placeholder='I want to support...' />
+          <div className='text-xs text-gray-500 mt-4'>DISCOVER</div>
         <div className='flex items-center gap-4 py-2 mt-1'>
           <i className="bi bi-globe text text-gray-400"></i>
-          <div className='text-sm'>Discover insipiring campaigns</div>
+          <div className='text-sm'>Insipiring Campaigns</div>
         </div>
         <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-heart text text-gray-400"></i>
-          <div className='text-sm'>Donate safely to palestine</div>
+          <div className='text-sm'>Zakat Verified</div>
         </div>
         <div className='flex items-center gap-4 py-2 pb-4'>
           <i className="bi bi-house text text-gray-400"></i>
-          <div className='text-sm'>Friday givers</div>
+          <div className='text-sm'>Tax Benifits</div>
+        </div>
+      </div>
+      <div className='px-3 py-2 border-t'>
+        <div className='text-xs text-gray-500 mt-2'>START</div>
+        <div className='flex items-center gap-4 py-2 mt-3'>
+          <i className="bi bi-send text text-gray-400"></i>
+          <div className='text-sm'>Start fundraising</div>
+        </div>
+      </div>
+      <div className='px-3 py-2 border-t'>
+        <div className='text-xs text-gray-500 mt-2'>CONTACT</div>
+        <div className='flex items-center gap-4 py-2 mt-3'>
+          <i className="bi bi-phone text text-gray-400"></i>
+          <div className='text-sm'>Contact Us</div>
         </div>
       </div>
       <div className='px-3 py-2 border-t'>
@@ -130,17 +145,7 @@ return (
           <div className='text-sm cursor-pointer' onClick={showAuth}>Login or Signup</div>
         </div>
       </div>
-      <div className='px-3 py-2 border-t'>
-        <div className='text-xs text-gray-500 mt-2'>START</div>
-        <div className='flex items-center gap-4 py-2 mt-3'>
-          <i className="bi bi-send text text-gray-400"></i>
-          <div className='text-sm'>Start fundraising</div>
-        </div>
-        <div className='flex items-center gap-4 py-2 pb-4'>
-          <i className="bi bi-people text text-gray-400"></i>
-          <div className='text-sm'>Start a community</div>
-        </div>
-      </div>
+      
       <div className='px-3 py-2 border-t flex text-xs text-gray-500 gap-4'>
         <div>Privacy Policy</div>
         <div>Terms and Conditions</div>
