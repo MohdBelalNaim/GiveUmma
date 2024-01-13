@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import DetailsPage from './pages/DetailsPage';
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -11,7 +12,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/details" element={<DetailsPage/>} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

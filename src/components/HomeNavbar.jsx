@@ -3,12 +3,32 @@ import styles from '../assets/css/navbar.module.css'
 
 const HomeNavbar = () => {
   const[menu,setMenu] = useState(false)
+  const[search,setSearch] = useState(false)
+
+  function showSearch(){
+    setSearch(true)
+    document.body.style.overflow='hidden'
+  }
+
+  function hideSearch(){
+    setSearch(false)
+    document.body.style.overflow='unset'
+  }
 return (
 <>
 
-  {/* <div className='fixed h-full bg-white w-full z-50 blur'>
-
-  </div> */}
+  {
+    search?
+    <div className={`${styles.searchOverlay} flex items-center justify-center`} onClick={hideSearch}>
+      <div className='bg-white w-[44%] rounded-xl p-4 shadow-xl'>
+        <div className='border-[1px] border-gray-300 rounded-lg overflow-hidden'>
+          <input className='w-[85%] shadow-inner px-3 py-2' type="text" placeholder="Search for"/>
+          <button className='w-[15%] p-2 text-center border-l'><i className="bi bi-search"></i></button>
+        </div>
+      </div>
+    </div>
+    :""
+  }
 
   {
   menu?
@@ -66,13 +86,13 @@ return (
 
   <div className={`${styles.navContainer} container mx-auto`}>
     <div className="nav-items">
-      <button className={styles.startCampaignButton}>START A CAMPAIGN</button>
+      <button className={`${styles.startCampaignButton}`}>START A CAMPAIGN</button>
     </div>
     <div className="nav-items">
       <div className={styles.logoText}>GiveUmmah</div>
     </div>
     <div className="nav-items">
-      <i className="bi bi-search" id={styles.navbarIcons} style={{"marginRight":20+'px'}}></i>
+      <i className="bi bi-search cursor-pointer hover:text-green-400" onClick={showSearch} id={styles.navbarIcons} style={{"marginRight":20+'px'}}></i>
       {
         menu?
         <i onClick={()=>setMenu(!menu)} className="bi bi-x text-[24px] hover:text-green-400 cursor-pointer"></i>
