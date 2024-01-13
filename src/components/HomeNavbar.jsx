@@ -112,7 +112,7 @@ return (
           placeholder='I want to support...' />
         <div className='flex items-center gap-4 py-2 mt-2'>
           <i className="bi bi-globe text text-gray-400"></i>
-          <div className='text-sm'>Insipiring Campaigns</div>
+          <div className='text-sm'>Discover all</div>
         </div>
         <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-heart text text-gray-400"></i>
