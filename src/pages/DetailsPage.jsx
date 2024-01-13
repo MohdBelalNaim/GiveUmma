@@ -1,12 +1,19 @@
-import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaDonate, FaFacebookF, FaTimes, FaWhatsapp } from "react-icons/fa";
+import { FaHand, FaXTwitter } from "react-icons/fa6";
 import HomeNavbar from "../components/HomeNavbar";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Loader from "../components/Loader";
 import Button from "../components/Button";
+import Supporter from "../components/DetailsPage/Supporter";
 
 const DetailsPage = () => {
   const supporters = [1, 2, 3, 4, 4, 5, 5, 6, 7, 6];
+  const [visible, setVisible] = useState(false);
+
+  const toggleModel = () => {
+    setVisible((current) => !current);
+  };
+
   return (
     <>
       <HomeNavbar />
@@ -92,19 +99,9 @@ const DetailsPage = () => {
             </div>
             {supporters.map((s, i) => {
               if (i > 3) return;
-              return (
-                <div className="flex gap-4 items-center">
-                  <div className="w-12 aspect-square bg-sky-200 grid place-items-center rounded-full text-primary text-xl">
-                    A
-                  </div>
-                  <div className="border-b border-primary py-4 w-full">
-                    <div className="text-gray-500">Vicky</div>
-                    <div className="text-sm font-[500]">$250</div>
-                  </div>
-                </div>
-              );
+              return <Supporter />;
             })}
-            <div className="text-center mt-6 mb-4">
+            <div className="text-center mt-6 mb-4" onClick={toggleModel}>
               <Button type="text">View all supporters</Button>
             </div>
           </div>
@@ -112,7 +109,7 @@ const DetailsPage = () => {
           <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
             Create a support fundraiser page and raise donations from your
             friends to help Vishal Tr.
-            <Button type="primary">Create a support fundraiser</Button>
+            <Button type="primary">Create own compaign</Button>
           </div>
 
           <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
@@ -150,7 +147,7 @@ const DetailsPage = () => {
             </div>
 
             {/* donate button */}
-            <div className="w-full max-w-72">
+            <div className="w-full max-w-72 mt-16">
               <Button width="full">Donate Now</Button>
             </div>
 
@@ -161,6 +158,26 @@ const DetailsPage = () => {
           </div>
         </aside>
       </section>
+
+      {/* model */}
+      <div className={`grid fixed inset-0 z-50 glass animate__animated animate__bounceIn ${!visible && "hidden"}`}>
+        <div className="bg-white max-w-[500px] w-full place-self-center rounded-lg overflow-hidden">
+          <div className="p-6 flex border-b">
+            <div className="flex text-xl gap-3 items-center mr-auto">
+              <FaDonate /> 465 Supporters
+            </div>
+            <FaTimes onClick={toggleModel} className="text-xl" />
+          </div>
+          <div className="max-h-[400px] overflow-auto px-6">
+            {supporters.map((s, i) => {
+              return <Supporter />;
+            })}
+          </div>
+          <div className="p-4 text-center border-t">
+            <Button type="primary">Donate Now</Button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
