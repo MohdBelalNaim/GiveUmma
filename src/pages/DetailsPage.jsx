@@ -160,8 +160,8 @@ const DetailsPage = () => {
       </section>
 
       {/* model */}
-      <div className={`grid fixed inset-0 z-50 glass animate__animated animate__bounceIn ${!visible && "hidden"}`}>
-        <div className="bg-white max-w-[500px] w-full place-self-center rounded-lg overflow-hidden">
+      <div className={`grid fixed inset-0 z-50 glass ${!visible && "hidden"}`}>
+        <div className="bg-white max-w-[500px] w-full place-self-center rounded-lg overflow-hidden animate__animated animate__bounceIn">
           <div className="p-6 flex border-b">
             <div className="flex text-xl gap-3 items-center mr-auto">
               <FaDonate /> 465 Supporters
