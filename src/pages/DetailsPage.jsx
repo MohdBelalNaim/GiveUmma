@@ -1,35 +1,42 @@
-import { FaFacebookF, FaFacebookSquare, FaWhatsapp } from "react-icons/fa";
-import { FaFacebook, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import HomeNavbar from "../components/HomeNavbar";
 import { Suspense } from "react";
 import Loader from "../components/Loader";
+import Button from "../components/Button";
 
 const DetailsPage = () => {
+  const supporters = [1, 2, 3, 4, 4, 5, 5, 6, 7, 6];
   return (
     <>
       <HomeNavbar />
-      <section className="flex gap-8 max-w-5xl mx-auto p-2 items-start">
+      <section className="flex gap-8 max-w-5xl mx-auto px-2 mb-16 items-start">
         {/* main */}
         <main className="space-y-4">
           <div className="p-4 bg-gray-200 text-sm">
             GiveUmmah will not charge any fee on your donation to this
             fundraiser.
           </div>
-          <div className="text-xl">
+          <div className="text-2xl">
             Urgent: Join the Fight to Save Vishal's Life!
           </div>
           <Suspense fallback={<Loader />}>
-            <img
-              src="http://picsum.photos/1080/720.webp"
-              className="aspect-video rounded-md"
-              alt=""
-            />
+            <div className="relative">
+              <div className="badge absolute top-5 -left-2 primary py-2 pl-4 pr-6 rounded-lg rounded-tl-none">
+                Tax benefits
+              </div>
+              <img
+                src="http://picsum.photos/1080/720.webp"
+                className="aspect-video rounded-md"
+                alt=""
+              />
+            </div>
           </Suspense>
           <div className="flex gap-x-4">
             <div className="flex flex-1 gap-x-2 items-center font-[500] text-xl font- bg-green-400 text-white justify-center py-3 rounded-full">
               <FaWhatsapp size={24} /> Share
             </div>
-            <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] bg-gray-400 text-white justify-center py-3 rounded-full">
+            <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] bg-black text-white justify-center py-3 rounded-full">
               <FaXTwitter size={20} /> Share
             </div>
             <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] bg-blue-900 text-white justify-center py-3 rounded-full">
@@ -78,23 +85,59 @@ const DetailsPage = () => {
           </p>
           {/* end of story */}
 
-          <div className="p-8 shadow-md rounded-md grid text-center text-sm">
+          {/* Supporters */}
+          <div className="bg-sky-50 rounded-xl p-4">
+            <div className="text-center mb-4 text-xl font-[500]">
+              Supporters
+            </div>
+            {supporters.map((s, i) => {
+              if (i > 3) return;
+              return (
+                <div className="flex gap-4 items-center">
+                  <div className="w-12 aspect-square bg-sky-200 grid place-items-center rounded-full text-primary text-xl">
+                    A
+                  </div>
+                  <div className="border-b border-primary py-4 w-full">
+                    <div className="text-gray-500">Vicky</div>
+                    <div className="text-sm font-[500]">$250</div>
+                  </div>
+                </div>
+              );
+            })}
+            <div className="text-center mt-6 mb-4">
+              <Button type="text">View all supporters</Button>
+            </div>
+          </div>
+
+          <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
+            Create a support fundraiser page and raise donations from your
+            friends to help Vishal Tr.
+            <Button type="primary">Create a support fundraiser</Button>
+          </div>
+
+          <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
+            Know someone in need of funds?
+            <Button type="outline">Refer to us</Button>
+          </div>
+
+          <div className="p-8 border rounded-md grid gap-2 place-items-center text-center text-sm">
             If something isn't right, we will work with you to ensure no misuse
-            occurs.<div className="underline">Report this cause</div>
+            occurs.
+            <Button type="text">Report this cause</Button>
           </div>
         </main>
 
         {/* card */}
-        <aside className="min-w-[400px] rounded-lg overflow-hidden shadow-md sticky top-0">
-          <div className="bg-zinc-950 text-center text-xl text-white py-4">
+        <aside className="min-w-[400px] rounded-lg overflow-hidden sticky top-2 border">
+          <div className="primary text-center text-xl text-white py-4">
             GIVE UMMAH
           </div>
-          <div className="py-6 grid gap-y-2 place-items-center px-6">
+          <div className="py-16 grid gap-y-2 place-items-center px-6">
             <div className="text-2xl">$123,000</div>
             <div className="text-gray-500">raised of $20,000</div>
             {/* progress */}
-            <div className="bg-gray-400 h-1.5 rounded-full max-w-72 w-full overflow-hidden">
-              <div className="bg-zinc-950 h-full w-[65%]"></div>
+            <div className="bg-gray-300 h-1.5 rounded-full max-w-72 w-full overflow-hidden">
+              <div className="primary h-full w-[65%]"></div>
             </div>
             {/* end progress */}
             <div className="flex w-full justify-between items-center max-w-72">
@@ -107,23 +150,13 @@ const DetailsPage = () => {
             </div>
 
             {/* donate button */}
-            <button className="bg-black max-w-72 w-full text-center py-3 rounded-full text-gray-100 mt-4">
-              Donate Now
-            </button>
-
-            <div className="text-gray-500 grid place-items-center mt-4">
-              <span className="text-xl">Zakat verified</span>
-              This campaign is Zakat Verfied
+            <div className="w-full max-w-72">
+              <Button width="full">Donate Now</Button>
             </div>
 
-            {/* social share */}
-            <div className="text-xl bg-zinc-950 text-neutral-50 flex justify-between items-center w-full px-4 py-3 mt-2 rounded-md">
-              Share on
-              <div className="flex gap-x-4">
-                <FaFacebook />
-                <FaXTwitter />
-                <FaWhatsapp />
-              </div>
+            <div className="text-gray-500 grid place-items-center mt-16">
+              <span className="text-xl">Zakat verified</span>
+              This campaign is Zakat Verfied
             </div>
           </div>
         </aside>
