@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import DetailsPage from './pages/DetailsPage';
+import SearchResults from './pages/SearchResults';
 
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/details" element={<DetailsPage/>} />
+        <Route path="/search-results" element={<SearchResults/>} />
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </BrowserRouter>
   );
 }
