@@ -3,6 +3,7 @@ import styles from '../assets/css/home.module.css'
 import HomeNavbar from '../components/HomeNavbar'
 import CampaignCard from '../components/CampaignCard'
 import OrganizationsCard from '../components/OrganizationsCard'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 let data = [1,2,3,4,5,6]
@@ -36,9 +37,11 @@ return (
                 }
             </div>
             <div className="mt-6">
+                <Link to="/all-campaigns">
                 <button className='bg-green-600 text-white font-semibold text-sm px-8 py-2 rounded-full'>
                     DISCOVER ALL
                 </button>
+                </Link>
             </div>
         </section>
 

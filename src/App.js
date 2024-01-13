@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import DetailsPage from './pages/DetailsPage';
 import SearchResults from './pages/SearchResults';
+import AllCampaigns from './pages/AllCampaigns';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/details" element={<DetailsPage/>} />
         <Route path="/search-results" element={<SearchResults/>} />
+        <Route path="/all-campaigns" element={<AllCampaigns/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
