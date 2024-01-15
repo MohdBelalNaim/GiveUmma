@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../assets/css/navbar.module.css'
+import { Link } from 'react-router-dom'
 
 const HomeNavbar = () => {
 const[menu,setMenu] = useState(false)
@@ -129,6 +130,14 @@ return (
           <div className='text-sm'>Start fundraising</div>
         </div>
       </div>
+      <Link to="/how-we-work">
+      <div className='px-3 py-2 border-t'>
+        <div className='flex items-center gap-4 py-2'>
+          <i className="bi bi-question-circle text text-gray-400"></i>
+          <div className='text-sm'>How we work</div>
+        </div>
+      </div>
+      </Link>
       <div className='px-3 py-2 border-t'>
         <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-person text text-gray-400"></i>
