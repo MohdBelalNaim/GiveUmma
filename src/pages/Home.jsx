@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from '../assets/css/home.module.css'
 import HomeNavbar from '../components/HomeNavbar'
 import CampaignCard from '../components/CampaignCard'
@@ -38,7 +38,7 @@ return (
             </div>
             <div className="mt-6">
                 <Link to="/all-campaigns">
-                <button className='bg-green-600 text-white font-semibold text-sm px-8 py-2 rounded-full'>
+                <button className='primary font-semibold text-sm px-8 py-2 rounded-full'>
                     DISCOVER ALL
                 </button>
                 </Link>

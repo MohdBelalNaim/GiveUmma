@@ -3,6 +3,7 @@ import styles from '../assets/css/navbar.module.css'
 import { Link } from 'react-router-dom'
 
 const HomeNavbar = () => {
+
 const[menu,setMenu] = useState(false)
 const[search,setSearch] = useState(false)
 const[signup,setSignup] = useState(false)
@@ -108,21 +109,24 @@ return (
     menu?
     <div className='bg-white absolute right-5 top-24 w-80 rounded-xl shadow-lg z-50'>
       <div className='px-3 pt-2'>
-        <input type="text"
-          className=' mt-2 w-full text-sm bg-gray-100 p-4 rounded-lg border border-gray-300 shadow-inner'
-          placeholder='I want to support...' />
+        <Link to="/all-campaigns">  
         <div className='flex items-center gap-4 py-2 mt-2'>
           <i className="bi bi-globe text text-gray-400"></i>
           <div className='text-sm'>Discover all</div>
         </div>
+        </Link>
+        <Link to="/zakat-verified">
         <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-heart text text-gray-400"></i>
           <div className='text-sm'>Zakat Verified</div>
         </div>
+        </Link>
+        <Link to="/tax-benifit">
         <div className='flex items-center gap-4 py-2 pb-4'>
           <i className="bi bi-house text text-gray-400"></i>
           <div className='text-sm'>Tax Benifits</div>
         </div>
+        </Link>
       </div>
       <div className='px-3 py-2 border-t'>
         <div className='flex items-center gap-4 py-2'>
@@ -166,11 +170,11 @@ return (
     :
     ""
     }
-    <div className="nav-items">
+    <div className="nav-items max-sm:hidden">
       <button className={`${styles.startCampaignButton}`}>START A CAMPAIGN</button>
     </div>
     <div className="nav-items">
-      <div className={styles.logoText}>GiveUmmah</div>
+      <div className={styles.logoText}><Link to="/">GiveUmma</Link></div>
     </div>
     <div className="nav-items">
       <i className="bi bi-search cursor-pointer hover:text-green-400" onClick={showSearch} id={styles.navbarIcons}

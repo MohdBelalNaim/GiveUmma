@@ -6,7 +6,7 @@ return (
 <Link to="/details">
 <div
     className='bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-transform'>
-    <img src={`http://picsum.photos/450/500?${index}`} className="h-[260px] object-cover w-full" />
+    <img src={`http://picsum.photos/450/500?${index}`} className="h-[260px] object-cover w-full" alt=""/>
     <div className='p-4 space-y-3'>
         <div className='flex gap-3 items-center'>
             <img src={`http://picsum.photos/450/500?${index}`} className='w-6 h-6 object-cover rounded-full' alt="" />
@@ -26,7 +26,7 @@ return (
             </div>
         </div>
         <div className='w-full bg-gray-200 h-1'>
-            <div className="w-40 h-1 bg-green-500"></div>
+            <div className="w-40 h-1 primary"></div>
         </div>
         <div className="flex items-center">
             <div>
@@ -38,7 +38,7 @@ return (
                 </div>
             </div>
             <button
-                className='bg-green-600 hover:bg-green-700 text-white py-2 px-4 text-sm font-semibold rounded-full ml-auto'>
+                className='primary text-white py-2 px-4 text-sm font-semibold rounded-full ml-auto'>
                 SUPPORT
             </button>
         </div>
