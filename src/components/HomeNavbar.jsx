@@ -175,7 +175,7 @@ return (
     <div className="nav-items max-sm:hidden">
       <Link to="/create-campaign"><button className={`${styles.startCampaignButton}`}>START A CAMPAIGN</button></Link>
     </div>
-    <div className="nav-items">
+    <div className="nav-items max-sm:pl-4">
       <div className={styles.logoText}><Link to="/">GiveUmma</Link></div>
     </div>
     <div className="nav-items">

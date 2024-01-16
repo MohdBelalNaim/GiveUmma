@@ -20,7 +20,7 @@ const DetailsPage = () => {
   return (
     <>
       <HomeNavbar />
-      <section className="flex gap-8 max-w-5xl mx-auto px-2 mb-16 items-start">
+      <section className="flex max-lg:flex-wrap gap-8 max-w-5xl mx-auto px-2 mb-16 items-start">
         {/* main */}
         <main className="space-y-4">
           <div className="p-4 bg-gray-200 text-sm">
@@ -112,17 +112,6 @@ const DetailsPage = () => {
             </div>
           </div>
 
-          {/* <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
-            Create a support fundraiser page and raise donations from your
-            friends to help Vishal Tr.
-            <Button type="primary">Create own compaign</Button>
-          </div> */}
-
-          {/* <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
-            Know someone in need of funds?
-            <Button type="outline">Refer to us</Button>
-          </div> */}
-
           <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
             If something isn't right, we will work with you to ensure no misuse
             occurs.
@@ -131,7 +120,7 @@ const DetailsPage = () => {
         </main>
 
         {/* card */}
-        <aside className="min-w-[400px] rounded-lg overflow-hidden sticky top-2 border">
+        <aside className="max-w-[800px] w-full rounded-lg overflow-hidden sticky top-2 border">
           <div className="primary text-center text-xl text-white py-4">
             GIVE UMMAH
           </div>

@@ -13,7 +13,7 @@ const ZakatVerified = () => {
                  <Link to="/"><i className='bi bi-arrow-left'></i></Link>
                  <div>Zakat verified Campaigns</div>
              </div>
-             <div className="grid grid-cols-3 gap-5">
+             <div className="grid grid3 gap-5">
                  {
                      data.map((items,index)=><CampaignCard index={index}/>)
                  }

@@ -15,7 +15,7 @@ const AllCampaigns = () => {
           </Link>
           <div>Discover All Campaigns</div>
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid3 gap-5">
           {data.map((items, index) => (
             <CampaignCard index={index} />
           ))}

@@ -1,13 +1,12 @@
 .timeline{
     display: grid;
+    gap:32px 0;
     grid-template-columns: max-content max-content auto;
     grid-template-areas: 'amt date desc'
                         'line date desc'
                         'line date desc';
     align-items: start;
     place-items: center;
-    
-
 }
 
 .amt{
@@ -29,4 +28,23 @@
     grid-area: desc;
     justify-self: end;
     margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline {
+        grid-template-columns: max-content 1fr;
+        grid-template-areas:'amt date'
+                            'desc desc'
+                            'line line';
+        justify-items: start;
+    }
+    
+    .line {
+        grid-row-start: 3;
+        height: 100px;
+    }
+
+    .desc{
+        margin-bottom: 0px;
+    }
 }
