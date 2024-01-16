@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaArrowLeft, FaArrowRight, FaCheck } from 'react-icons/fa'
+
 
 const StoryAndPhotos = () => {
 return (

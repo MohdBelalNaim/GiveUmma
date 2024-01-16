@@ -4,10 +4,15 @@ import StoryAndPhotos from '../components/CreateCampaignPage/StoryAndPhotos'
 import BasicDetails from '../components/CreateCampaignPage/BasicDetails'
 import { FaArrowLeft, FaArrowRight, FaCheck } from 'react-icons/fa'
 import Button from '../components/Button'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const CreateCampaign = () => {
 const[story,setStory] = useState(false)
+
+const toggleForm = () =>{
+    setStory(!story)
+    window.scrollTo(0,0)
+}
 return (
 <div>
     <HomeNavbar />
@@ -28,11 +33,11 @@ return (
             story?
             <>
                 
-                <Button onClick={()=>setStory(!story)} type="outline" size="md"><FaArrowLeft/>Back</Button>
+                <Button onClick={toggleForm} type="outline" size="md"><FaArrowLeft/>Back</Button>
                 <Link to="/campaign-confirmation"><Button size="md" type="primary">Submit <FaCheck/></Button></Link>
             </>
             :
-                <Button onClick={()=>setStory(!story)} size="md" type="primary">Next <FaArrowRight/></Button>
+                <Button onClick={toggleForm} size="md" type="primary">Next <FaArrowRight/></Button>
             }
 
         </div>
