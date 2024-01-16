@@ -1,18 +1,21 @@
-import { FaDonate, FaFacebookF, FaTimes, FaWhatsapp } from "react-icons/fa";
-import { FaHand, FaXTwitter } from "react-icons/fa6";
+import { FaDonate, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaIndianRupeeSign, FaXTwitter } from "react-icons/fa6";
 import HomeNavbar from "../components/HomeNavbar";
-import { Suspense, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import Button from "../components/Button";
 import Supporter from "../components/DetailsPage/Supporter";
+import Model from "../components/Model";
+import useModel from "../customHooks/useModel";
+import DonationForm from "../components/DetailsPage/DonationForm";
 
 const DetailsPage = () => {
   const supporters = [1, 2, 3, 4, 4, 5, 5, 6, 7, 6];
-  const [visible, setVisible] = useState(false);
 
-  const toggleModel = () => {
-    setVisible((current) => !current);
-  };
+  // supporters controller
+  const [visible, toggleModel] = useModel();
+
+  const [donateForm, toggleDonateForm] = useModel();
 
   return (
     <>
@@ -27,27 +30,26 @@ const DetailsPage = () => {
           <div className="text-2xl">
             Urgent: Join the Fight to Save Vishal's Life!
           </div>
-            <div className="relative">
-              <div className="badge absolute top-5 -left-2 primary py-2 pl-4 pr-6 rounded-lg rounded-tl-none">
-                Tax benefits
-              </div>
-          <Suspense fallback={<Loader />}>
+          <div className="relative">
+            <div className="badge absolute top-5 -left-2 primary py-2 pl-4 pr-6 rounded-lg rounded-tl-none">
+              Tax benefits
+            </div>
+            <Suspense fallback={<Loader />}>
               <img
                 src="http://picsum.photos/1080/720.webp"
                 className="aspect-video rounded-md"
                 alt=""
               />
-          </Suspense>
-
-            </div>
+            </Suspense>
+          </div>
           <div className="flex gap-x-4">
-            <div className="flex flex-1 gap-x-2 items-center font-[500] text-xl font- bg-green-400 text-white justify-center py-3 rounded-full">
+            <div className="flex flex-1 gap-x-2 items-center font-[500] text-xl text-green-400 border-2 border-green-400 hover:bg-green-400 hover:text-white cursor-pointer transition-colors justify-center py-3 rounded-full">
               <FaWhatsapp size={24} /> Share
             </div>
-            <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] bg-black text-white justify-center py-3 rounded-full">
+            <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] text-black hover:text-white border-2 border-black hover:bg-black cursor-pointer transition-colors justify-center py-3 rounded-full">
               <FaXTwitter size={20} /> Share
             </div>
-            <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] bg-blue-900 text-white justify-center py-3 rounded-full">
+            <div className="flex flex-1 gap-x-2 items-center text-xl font-[500] border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer transition-colors justify-center py-3 rounded-full">
               <FaFacebookF size={20} /> Share
             </div>
           </div>
@@ -100,28 +102,31 @@ const DetailsPage = () => {
             </div>
             {supporters.map((s, i) => {
               if (i > 3) return;
-              return <Supporter />;
+              return <Supporter key={i} />;
             })}
-            <div className="text-center mt-6 mb-4" onClick={toggleModel}>
+            <div
+              className="flex justify-center mt-6 mb-4"
+              onClick={toggleModel}
+            >
               <Button type="text">View all supporters</Button>
             </div>
           </div>
 
-          <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
+          {/* <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
             Create a support fundraiser page and raise donations from your
             friends to help Vishal Tr.
             <Button type="primary">Create own compaign</Button>
-          </div>
+          </div> */}
 
-          <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
+          {/* <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
             Know someone in need of funds?
             <Button type="outline">Refer to us</Button>
-          </div>
+          </div> */}
 
-          <div className="p-8 border rounded-md grid gap-2 place-items-center text-center text-sm">
+          <div className="p-8 border rounded-md grid gap-4 place-items-center text-center text-sm">
             If something isn't right, we will work with you to ensure no misuse
             occurs.
-            <Button type="text">Report this cause</Button>
+            <Button type="outline">Report this cause</Button>
           </div>
         </main>
 
@@ -149,7 +154,9 @@ const DetailsPage = () => {
 
             {/* donate button */}
             <div className="w-full max-w-72 mt-16">
-              <Button width="full">Donate Now</Button>
+              <Button width="full" onClick={toggleDonateForm}>
+                Donate Now
+              </Button>
             </div>
 
             <div className="text-gray-500 grid place-items-center mt-16">
@@ -160,25 +167,26 @@ const DetailsPage = () => {
         </aside>
       </section>
 
-      {/* model */}
-      <div className={`grid fixed inset-0 z-50 glass ${!visible && "hidden"}`}>
-        <div className="bg-white max-w-[500px] w-full place-self-center rounded-lg overflow-hidden animate__animated animate__bounceIn">
-          <div className="p-6 flex border-b">
-            <div className="flex text-xl gap-3 items-center mr-auto">
-              <FaDonate /> 465 Supporters
-            </div>
-            <FaTimes onClick={toggleModel} className="text-xl" />
-          </div>
-          <div className="max-h-[400px] overflow-auto px-6">
-            {supporters.map((s, i) => {
-              return <Supporter />;
-            })}
-          </div>
-          <div className="p-4 text-center border-t">
-            <Button type="primary">Donate Now</Button>
-          </div>
+      {/* Donation Form */}
+
+      <DonationForm controller={[donateForm, toggleDonateForm]} />
+
+      {/* supporters model */}
+      <Model
+        title={
+          <>
+            <FaDonate /> 465 Supporters
+          </>
+        }
+        btnText="Donate Now"
+        controller={[visible, toggleModel]}
+      >
+        <div className="px-6">
+          {supporters.map((s, i) => {
+            return <Supporter key={i} />;
+          })}
         </div>
-      </div>
+      </Model>
     </>
   );
 };

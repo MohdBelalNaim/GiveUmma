@@ -1,8 +1,10 @@
-const Button = ({ type, children, width }) => {
+const Button = ({ type, children, width, onClick }) => {
   return (
     <button
+      type="button"
+      onClick={onClick}
       className={`
-        py-3 px-6 rounded-full font-[500] text-gray-50 bg-black
+        py-3 px-6 rounded-full font-[500] text-gray-50 bg-black flex justify-center items-center
       ${width === "full" && "w-full"}
       ${type === "primary" && "primary"}
       ${
