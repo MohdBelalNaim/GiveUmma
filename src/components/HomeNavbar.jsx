@@ -128,12 +128,14 @@ return (
         </div>
         </Link>
       </div>
+      <Link to="/create-campaign">
       <div className='px-3 py-2 border-t'>
         <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-send text text-gray-400"></i>
           <div className='text-sm'>Start fundraising</div>
         </div>
       </div>
+      </Link>
       <Link to="/how-we-work">
       <div className='px-3 py-2 border-t'>
         <div className='flex items-center gap-4 py-2'>
@@ -171,7 +173,7 @@ return (
     ""
     }
     <div className="nav-items max-sm:hidden">
-      <button className={`${styles.startCampaignButton}`}>START A CAMPAIGN</button>
+      <Link to="/create-campaign"><button className={`${styles.startCampaignButton}`}>START A CAMPAIGN</button></Link>
     </div>
     <div className="nav-items">
       <div className={styles.logoText}><Link to="/">GiveUmma</Link></div>

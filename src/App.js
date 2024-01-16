@@ -10,6 +10,7 @@ import ZakatVerified from './pages/ZakatVerified';
 import TaxBenifit from './pages/TaxBenifit';
 import HowWeWork from './pages/HowWeWork';
 import CreateCampaign from './pages/CreateCampaign';
+import ConfirmationPage from './pages/ConfirmationPage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/tax-benifit" element={<TaxBenifit/>} />
         <Route path="/how-we-work" element={<HowWeWork/>} />
         <Route path="/create-campaign" element={<CreateCampaign/>} />
+        <Route path="/campaign-confirmation" element={<ConfirmationPage/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
