@@ -4,7 +4,7 @@ const Button = ({ type, children, width, onClick, size }) => {
       type="button"
       onClick={onClick}
       className={`
-       rounded-full gap-3 font-[500] text-gray-50 bg-black flex justify-center items-center
+       rounded-full gap-3 font-[500] text-gray-50 bg-black flex justify-center items-center active:scale-95 transition-transform
       ${width === "full" && "w-full"}
       ${type === "primary" && "primary"}
       ${size === "md" ? "px-7 py-2" : "py-3 px-6"}
