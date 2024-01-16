@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from '../assets/css/home.module.css'
 import HomeNavbar from '../components/HomeNavbar'
 import CampaignCard from '../components/CampaignCard'
