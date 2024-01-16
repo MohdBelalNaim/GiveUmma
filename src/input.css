@@ -50,3 +50,19 @@ html,body{
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
+
+.grid3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 992px){
+    .grid3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+    .grid3 {
+        grid-template-columns: 1fr;
+    }
+}
