@@ -34,7 +34,7 @@ return (
   auth?
   <div className={`${styles.searchOverlay} flex justify-center items-start`}>
     <div className='bg-white w-[36%] max-sm:w-[96%] rounded-xl p-4 shadow-xl relative top-5 animate__animated animate__bounceIn'>
-      <div><i onClick={hideAuth} className="bi bi-x text-xl font-bold"></i></div>
+      <div><i onClick={hideAuth} className="bi bi-x text-xl font-bold cursor-pointer"></i></div>
       <div className='grid grid-cols-2'>
         <div className='font-bold border-b-2 text-center py-3 cursor-pointer' onClick={()=>setSignup(false)}>Login</div>
         <div className='font-bold border-b-2 text-center py-3 cursor-pointer' onClick={()=>setSignup(true)}>Signup</div>
@@ -57,9 +57,9 @@ return (
         <input type="text" className='bg-gray-100 border-gray-300 w-full py-3 px-4 mt-3 shadow-inner rounded-lg'
           placeholder='Password' />
         <div className='flex gap-3 mt-3'>
-          <input type="checkbox" className='w-4' name="" id="" />
-          <div className='text-xs'>
-            I’d like to receive awesome e-mails and updates from LaunchGood
+          <input type="checkbox" className='w-4' name="" id="consent" />
+          <div className='text-xs' >
+            <label htmlFor="consent">I’d like to receive awesome e-mails and updates from LaunchGood</label>
           </div>
         </div>
         <button className='bg-black w-full text-white text-lg rounded-lg py-2 mt-3 '>Signup</button>

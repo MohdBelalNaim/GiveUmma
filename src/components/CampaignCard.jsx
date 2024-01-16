@@ -31,10 +31,10 @@ return (
         <div className="flex items-center">
             <div>
                 <div className="font-semibold text-xl">
-                    $ 120000
+                    ₹ 120000
                 </div>
                 <div className='text-sm text-gray-500'>
-                    funded of $123000
+                    funded of ₹ 123000
                 </div>
             </div>
             <button
