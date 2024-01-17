@@ -11,6 +11,7 @@ import TaxBenifit from './pages/TaxBenifit';
 import HowWeWork from './pages/HowWeWork';
 import CreateCampaign from './pages/CreateCampaign';
 import ConfirmationPage from './pages/ConfirmationPage';
+import MyProfile from './pages/MyProfile';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/how-we-work" element={<HowWeWork/>} />
         <Route path="/create-campaign" element={<CreateCampaign/>} />
         <Route path="/campaign-confirmation" element={<ConfirmationPage/>} />
+        <Route path="/my-profile" element={<MyProfile/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
