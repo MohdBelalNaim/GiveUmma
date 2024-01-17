@@ -14,7 +14,7 @@ return (
     <section className={styles.banner}>
 
         <HomeNavbar />
-        <div className={`container mx-auto px-[72px] pb-20 max-sm:px-[24px] max-sm:pb-8`}>
+        <div className={`container mx-auto pb-20 max-sm:px-[24px] max-sm:pb-8`}>
             <div className="font-bold text-[60px] max-w-[600px] max-sm:text-[40px]">
                 Empower lives with your giving
             </div>
@@ -26,7 +26,7 @@ return (
     </section>
 
     <section className='container mx-auto'>
-        <section className='py-8 px-[72px] max-sm:px-[12px]'>
+        <section className='py-8 max-sm:px-[12px]'>
             <div className={`${styles.fundraisingTitle} text-sm md:text-[32px] mb-3 font-[700]`}>Fundraising now</div>
             <div className={`${styles.fundraisingSubTitle} mb-4`}>Sponsored</div>
 
@@ -45,7 +45,7 @@ return (
             </div>
         </section>
 
-        <section className="py-8 px-[72px] max-sm:px-[12px]">
+        <section className="py-8 max-sm:px-[12px]">
             <div className={`${styles.fundraisingTitle} text-sm md:text-[32px] mb-3 font-[700]`}>Organizations</div>
             <div className={`${styles.fundraisingSubTitle} mb-4`}>Support your favorite organizations</div>
             <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-6 mt-4">

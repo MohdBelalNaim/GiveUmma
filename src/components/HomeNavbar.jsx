@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import styles from '../assets/css/navbar.module.css'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
 
 const HomeNavbar = () => {
 
+const { loginWithRedirect,user,logout } = useAuth0();
 const[menu,setMenu] = useState(false)
 const[search,setSearch] = useState(false)
 const[signup,setSignup] = useState(false)
@@ -155,10 +157,26 @@ return (
         </div>
       </div>
       <div className='px-3 py-2 border-t'>
+      {
+        !user?
         <div className='flex items-center gap-4 py-2'>
           <i className="bi bi-shield text text-gray-400"></i>
-          <div className='text-sm cursor-pointer' onClick={showAuth}>Login or Signup</div>
+          <div className='text-sm cursor-pointer' onClick={() => loginWithRedirect()}>Login or Signup</div>
         </div>
+        :
+        <>
+        <Link to="/my-profile">
+          <div className='flex items-center gap-4 py-2'>
+            <i className="bi bi-shield text text-gray-400"></i>
+            <div className='text-sm cursor-pointer'>My Account</div>
+          </div>
+        </Link>
+        <div className='flex items-center gap-4 py-2'>
+          <i className="bi bi-power text text-gray-400"></i>
+          <div className='text-sm cursor-pointer' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</div>
+        </div>
+        </>
+      }
       </div>
       
       <div className='px-3 py-2 border-t flex text-xs text-gray-500 gap-4'>

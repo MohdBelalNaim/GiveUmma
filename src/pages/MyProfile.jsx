@@ -1,10 +1,14 @@
 import React from 'react'
 import HomeNavbar from '../components/HomeNavbar'
 import Button from '../components/Button'
-import { FaCalendar, FaCheck, FaEnvelope, FaEye, FaFacebook, FaFacebookF, FaHandHoldingHeart, FaLink, FaWhatsapp } from 'react-icons/fa'
+import { FaCalendar, FaCheck, FaEnvelope, FaEye, FaFacebook, FaFacebookF, FaHandHoldingHeart, FaLink, FaSpinner, FaWhatsapp } from 'react-icons/fa'
 import MyCampaigns from '../components/MyProfilePage/MyCampaigns'
+import { useAuth0 } from "@auth0/auth0-react";
+import Loader from '../components/Loader'
+import { Link } from 'react-router-dom'
 
 const MyProfile = () => {
+
     const profileOptions=[
         "Verify phone number",
         "Add city location",
@@ -16,20 +20,25 @@ const MyProfile = () => {
         "Add Aadhar card number",
         "Add date of birth",
     ]
+    const { user, isLoading } = useAuth0();
+
+    if (isLoading) {
+      return <div className='absolute z-50 bg-white grid place-items-center inset-0'>
+        <FaSpinner  />
+      </div>;
+    }
   return (
     <>
         <HomeNavbar/>
-        <div className='container mx-auto px-[120px] max-sm:px-0 pb-16'>
+        <div className='container mx-auto max-sm:px-0 pb-16'>
             <div className='flex gap-6 font-semibold text-sm w-[40%] mx-auto text-center'>
-                <div className='w-[25%] py-3  border-b border-primary'>PROFILE</div>
-                <div className='w-[25%] py-3'>FUNDRAISERS</div>
-                <div className='w-[25%] py-3'>DONATIONS</div>
-                <div className='w-[25%] py-3'>REFER</div>
+                <div className='flex-1 py-3  border-b border-primary'>PROFILE</div>
+                <div className='flex-1 py-3' >FUNDRAISERS</div>
             </div>
 
             <section>
                 <div className='text-xl font-bold'>
-                        Your Profile
+                        Your Profile 
                 </div>
 
                 <div className='flex gap-8  max-sm:flex-col items-start py-5'>
@@ -39,19 +48,19 @@ const MyProfile = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-x-28 gap-y-5 p-5">
                             <div>
-                                <img src="https://picsum.photos/300" className='h-24 w-24 object-contain rounded-full' alt="" />
+                                <img src={user.picture} className='h-24 w-24 object-contain rounded-full' alt="" />
                             </div>
                             <div className='place-self-end justify-self-start'>
                                 <div className='text-gray-500'>Name</div>
-                                <div className='text-lg font-light'>Sajad Khaki</div>
+                                <div className='text-lg font-light'>{user.name}</div>
                             </div>
                             <div>
                                 <div className='text-gray-500'>Email</div>
-                                <div className='text-lg font-light'>sajadkhaki09@gmail.com</div>
+                                <div className='text-lg font-light'>{user.email}</div>
                             </div>
                             <div>
                                 <div className='text-gray-500'>Date of Birth</div>
-                                <div className='text-lg font-light'>01-01-1997</div>
+                                <div className='text-lg font-light'>{user.birthdate??"DD-MM-YYYY"}</div>
                             </div>
                             <div>
                                 <div className='text-gray-500'>Phone Number</div>
@@ -90,7 +99,7 @@ const MyProfile = () => {
                 </div>
             </section>
 
-            <section>
+            <section id="fundraiser">
                 <div className='text-xl font-bold mb-4'>
                     Your Fundraisers
                 </div>
